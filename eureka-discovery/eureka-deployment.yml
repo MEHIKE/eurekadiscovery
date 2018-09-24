@@ -24,7 +24,12 @@ spec:
           valueFrom:
             configMapKeyRef:
               name: config
-              key: service-prt
+              key: service-host
+        - name: CONFIG_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: config
+              key: service-port
         - name: POSTGRES_USER
           valueFrom:
             secretKeyRef:
