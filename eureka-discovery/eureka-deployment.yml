@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: config
+  name: eureka
   labels:
-    app: config
+    app: eureka
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: config
+      app: eureka
   template:
     metadata:
       labels:
-        app: config
+        app: eureka
     spec:
       containers:
-      - name: config-service
-        image: mehike/config-service:0.0.1
+      - name: eureka-discovery
+        image: mehike/eureka-discovery:0.0.1
         ports:
-        - containerPort: 8088
+        - containerPort: 8061
         env:
         - name: POSTGRES_DB
           valueFrom:
@@ -30,19 +30,4 @@ spec:
             secretKeyRef:
               name: postgresdb
               key: database-user
-        - name: POSTGRES_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: postgresdb
-              key: database-password
-        - name: POSTGRES_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: postgresdb
-              key: database-host
-        - name: POSTGRES_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: postgresdb
-              key: database-port
 
