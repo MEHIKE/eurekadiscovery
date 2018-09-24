@@ -20,11 +20,11 @@ spec:
         ports:
         - containerPort: 8061
         env:
-        - name: POSTGRES_DB
+        - name: CONFIG_SERVICE
           valueFrom:
             configMapKeyRef:
-              name: postgresdb
-              key: database-name
+              name: config
+              key: service-prt
         - name: POSTGRES_USER
           valueFrom:
             secretKeyRef:
