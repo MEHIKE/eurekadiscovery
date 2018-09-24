@@ -20,12 +20,12 @@ spec:
         ports:
         - containerPort: 8061
         env:
-        - name: CONFIG_SERVICE
+        - name: CONFIG_SERVICE_HOST
           valueFrom:
             configMapKeyRef:
               name: config
               key: service-host
-        - name: CONFIG_PORT
+        - name: CONFIG_SERVICE_PORT
           valueFrom:
             configMapKeyRef:
               name: config
