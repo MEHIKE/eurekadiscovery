@@ -5,6 +5,6 @@ metadata:
   labels:
     app: eureka
 data:
-  service-port: "8088"
+  service-port: "8061"
   eureka-uri: ""
 
