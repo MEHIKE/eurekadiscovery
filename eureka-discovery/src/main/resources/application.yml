@@ -4,3 +4,4 @@ spring:
   cloud:
     config:
       uri: http://$CONFIG_SERVICE:8088
+      
