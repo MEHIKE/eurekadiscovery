@@ -1,8 +1,0 @@
-server:
-  port: 8061
-  application:
-    name: eureka-discovery
-  cloud:
-    config:
-      uri: http://$CONFIG_SERVICE_HOST:$CONFIG_SERVICE_PORT
-      
