@@ -6,5 +6,6 @@ metadata:
     app: eureka
 data:
   service-port: "8061"
-  eureka-uri: ""
+  service-host: eureka
+  eureka-uri: "http://eureka:8061/eureka/"
 
